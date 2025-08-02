@@ -1,32 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	  <Version>1.0.0</Version>
-	  <PackageId>Orbyss.Components.Json.Models</PackageId>
-	  <Authors>Orbyss.io</Authors>
-	  <Company>Orbyss</Company>
-	  <Description>Provides shared model types used by Orbyss JSON Forms and DataGrid generators. Includes support for JSON Schema, UI Schema, and Translation Schema.</Description>
-	  <PackageTags>JsonForms JsonSchema UI Forms JsonTables TranslationSchema DateTimeTicks DateTicks Orbyss Unfussiness</PackageTags>
-	  <PackageProjectUrl>https://www.nuget.org/packages/Orbyss.Components.Json.Models</PackageProjectUrl>
-	  <RepositoryUrl>https://github.com/orbyss-io/Orbyss.Components.Json.Models</RepositoryUrl>
-	  <RepositoryType>git</RepositoryType>
-	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <PackageReadmeFile>README.md</PackageReadmeFile>
-	  <PackageIcon>icon.png</PackageIcon>
-	  <IncludeSymbols>true</IncludeSymbols>
-	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
-	  <EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Version>1.0.0</Version>
+		<PackageId>Orbyss.Components.Json.Models</PackageId>
+		<Authors>Orbyss.io</Authors>
+		<Company>Orbyss</Company>
+		<Description>Provides shared model types used by Orbyss JSON Forms and DataGrid generators. Includes support for JSON Schema, UI Schema, and Translation Schema.</Description>
+		<PackageTags>JsonForms JsonSchema UI Forms JsonTables TranslationSchema DateTimeTicks DateTicks Orbyss Unfussiness</PackageTags>
+		<PackageProjectUrl>https://www.nuget.org/packages/Orbyss.Components.Json.Models</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/orbyss-io/Orbyss.Components.Json.Models</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 
-	  <PackageReleaseNotes>Initial release. Includes core shared types for schema-based UI generation in Blazor.</PackageReleaseNotes>
-  </PropertyGroup>
+		<PackageReleaseNotes>Initial release. Includes core shared types for schema-based UI generation in Blazor.</PackageReleaseNotes>
+	</PropertyGroup>
 
-  <ItemGroup>
-	  <None Include="README.md" Pack="true" PackagePath="" />
-	  <None Include="icon.png" Pack="true" PackagePath="" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="" />
+		<None Include="icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 </Project>
