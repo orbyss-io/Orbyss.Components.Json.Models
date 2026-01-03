@@ -1,51 +1,92 @@
-﻿namespace Orbyss.Components.Json.Models
+﻿namespace Orbyss.Components.Json.Models;
+
+public sealed record TranslationErrorSection(
+    string? Custom,
+    string? Const,
+    string? Required,
+    string? Minimum,
+    string? Maximum,
+    string? MinimumLength,
+    string? MaximumLength,
+    string? MinimumItems,
+    string? MaximumItems,
+    string? Contains,
+    string? Pattern)
 {
-    public sealed record TranslationErrorSection(      
-        string? Custom,
-        string? Const,
-        string? Required,
-        string? Minimum,
-        string? Maximum,
-        string? MinimumLength,
-        string? MaximumLength,
-        string? MinimumItems,
-        string? MaximumItems,
-        string? Contains,
-        string? Pattern)
+    public string GetConst()
     {
-        public string GetConst() => GetValueOrDefault(Const, DefaultJsonFormValidationMessages.Const);
-        public string GetMinimum() => GetValueOrDefault(Minimum, DefaultJsonFormValidationMessages.Minimum);
-        public string GetMaximum() => GetValueOrDefault(Maximum, DefaultJsonFormValidationMessages.Maximum);
-        public string GetMinimumLength() => GetValueOrDefault(MinimumLength, DefaultJsonFormValidationMessages.MinLength);
-        public string GetMaximumLength() => GetValueOrDefault(MaximumItems, DefaultJsonFormValidationMessages.MaxLength);
-        public string GetMinimumItems() => GetValueOrDefault(MinimumItems, DefaultJsonFormValidationMessages.MinItems);
-        public string GetMaximumItems() => GetValueOrDefault(MaximumItems, DefaultJsonFormValidationMessages.MaxItems);
+        return GetValueOrDefault(Const, DefaultJsonFormValidationMessages.Const);
+    }
 
-        public string GetContains() => GetValueOrDefault(Contains, DefaultJsonFormValidationMessages.Contains);
-        public string GetRequired() => GetValueOrDefault(Required, DefaultJsonFormValidationMessages.Required);
-        public string GetPattern() => GetValueOrDefault(Pattern, DefaultJsonFormValidationMessages.Pattern);
-        public string GetDefault() => GetValueOrDefault(Custom, DefaultJsonFormValidationMessages.Default);
+    public string GetMinimum()
+    {
+        return GetValueOrDefault(Minimum, DefaultJsonFormValidationMessages.Minimum);
+    }
 
-        string GetValueOrDefault(string? value, string defaultValue)
+    public string GetMaximum()
+    {
+        return GetValueOrDefault(Maximum, DefaultJsonFormValidationMessages.Maximum);
+    }
+
+    public string GetMinimumLength()
+    {
+        return GetValueOrDefault(MinimumLength, DefaultJsonFormValidationMessages.MinLength);
+    }
+
+    public string GetMaximumLength()
+    {
+        return GetValueOrDefault(MaximumItems, DefaultJsonFormValidationMessages.MaxLength);
+    }
+
+    public string GetMinimumItems()
+    {
+        return GetValueOrDefault(MinimumItems, DefaultJsonFormValidationMessages.MinItems);
+    }
+
+    public string GetMaximumItems()
+    {
+        return GetValueOrDefault(MaximumItems, DefaultJsonFormValidationMessages.MaxItems);
+    }
+
+    public string GetContains()
+    {
+        return GetValueOrDefault(Contains, DefaultJsonFormValidationMessages.Contains);
+    }
+
+    public string GetRequired()
+    {
+        return GetValueOrDefault(Required, DefaultJsonFormValidationMessages.Required);
+    }
+
+    public string GetPattern()
+    {
+        return GetValueOrDefault(Pattern, DefaultJsonFormValidationMessages.Pattern);
+    }
+
+    public string GetDefault()
+    {
+        return GetValueOrDefault(Custom, DefaultJsonFormValidationMessages.Default);
+    }
+
+    private string GetValueOrDefault(string? value, string defaultValue)
+    {
+        if (!string.IsNullOrWhiteSpace(value))
         {
-            if (!string.IsNullOrWhiteSpace(value))
-            {
-                return value;
-            }
-
-            if (!string.IsNullOrWhiteSpace(Custom))
-            {
-                return Custom;
-            }
-
-            return defaultValue;
+            return value;
         }
 
-        public static TranslationErrorSection DefaultSection()
+        if (!string.IsNullOrWhiteSpace(Custom))
         {
-            return new(
-               null, null, null, null, null, null, null, null, null, null, null
-           );
+            return Custom;
         }
+
+        return defaultValue;
+    }
+
+    public static TranslationErrorSection DefaultSection()
+    {
+        return new(
+           null, null, null, null, null, null, null, null, null, null, null
+       );
     }
 }
