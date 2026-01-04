@@ -1,4 +1,7 @@
-﻿namespace Orbyss.Components.Json.Models;
+﻿using System.Data;
+using System.Reflection;
+
+namespace Orbyss.Components.Json.Models;
 
 public sealed record TranslationErrorSection(
     string? Custom,
@@ -66,6 +69,21 @@ public sealed record TranslationErrorSection(
     public string GetDefault()
     {
         return GetValueOrDefault(Custom, DefaultJsonFormValidationMessages.Default);
+    }
+
+    public IEnumerable<string> GetAll()
+    {
+        var properties = GetType()
+            .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+            .Select(x => $"{x.GetValue(this)}")
+            .Where(x => !string.IsNullOrWhiteSpace(x));
+
+        if(!properties.Any())
+        {
+            return [GetDefault()];
+        }
+
+        return properties;
     }
 
     private string GetValueOrDefault(string? value, string defaultValue)
