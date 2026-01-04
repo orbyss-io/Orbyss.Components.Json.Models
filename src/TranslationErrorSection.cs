@@ -38,7 +38,7 @@ public sealed record TranslationErrorSection(
 
     public string GetMaximumLength()
     {
-        return GetValueOrDefault(MaximumItems, DefaultJsonFormValidationMessages.MaxLength);
+        return GetValueOrDefault(MaximumLength, DefaultJsonFormValidationMessages.MaxLength);
     }
 
     public string GetMinimumItems()
